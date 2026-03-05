@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Meldee Civil Works</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #D32F2F;
+            --secondary-color: #FF5722;
+            --accent-color: #FFC107;
+            --dark-color: #1A1A2E;
+            --light-color: #F5F5F5;
+            --white: #FFFFFF;
+            --gray: #6B7280;
+            --light-gray: #E5E7EB;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--dark-color);
+            cursor: pointer;
+        }
+
+        /* Page Header */
+        .page-header {
+            min-height: 50vh;
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.9) 0%, rgba(211, 47, 47, 0.8) 100%),
+                        url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 20px 60px;
+            position: relative;
+        }
+
+        .page-header-content h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .page-header-content p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .breadcrumb a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 100px 20px;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 30px auto 0;
+        }
+
+        /* Services Grid */
+        .services-section {
+            background: var(--white);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s ease;
+            position: relative;
+            transform-style: preserve-3d;
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px) rotateX(5deg);
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-image {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .service-card:hover .service-image img {
+            transform: scale(1.1);
+        }
+
+        .service-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent, rgba(26, 26, 46, 0.8));
+        }
+
+        .service-icon {
+            position: absolute;
+            bottom: -35px;
+            left: 30px;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            color: var(--white);
+            box-shadow: 0 10px 30px rgba(211, 47, 47, 0.4);
+            z-index: 10;
+        }
+
+        .service-content {
+            padding: 60px 30px 30px;
+        }
+
+        .service-content h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+
+        .service-content p {
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .service-features li {
+            padding: 8px 0;
+            color: var(--gray);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+        }
+
+        .service-features li i {
+            color: var(--primary-color);
+            font-size: 14px;
+        }
+
+        .service-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary-color);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .service-btn:hover {
+            gap: 15px;
+            color: var(--secondary-color);
+        }
+
+        /* Process Section */
+        .process-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .process-step {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .process-step:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .step-number {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--white);
+            box-shadow: 0 10px 30px rgba(211, 47, 47, 0.3);
+        }
+
+        .process-step h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+
+        .process-step p {
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        /* Industries Section */
+        .industries-section {
+            background: var(--dark-color);
+            color: var(--white);
+        }
+
+        .industries-section .section-header h2 {
+            color: var(--white);
+        }
+
+        .industries-section .section-header p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+        }
+
+        .industry-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 35px 25px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .industry-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--primary-color);
+            transform: translateY(-10px) scale(1.05);
+        }
+
+        .industry-item i {
+            font-size: 40px;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .industry-item h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        /* Why Choose Us */
+        .why-us {
+            background: var(--white);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .why-item {
+            display: flex;
+            gap: 20px;
+            padding: 30px;
+            background: var(--light-color);
+            border-radius: 15px;
+            transition: all 0.4s ease;
+        }
+
+        .why-item:hover {
+            background: var(--white);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .why-icon {
+            width: 60px;
+            height: 60px;
+            min-width: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--white);
+        }
+
+        .why-content h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+
+        .why-content p {
+            color: var(--gray);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            padding: 80px 20px;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .cta-section h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-white {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 18px 40px;
+            background: var(--white);
+            color: var(--primary-color);
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-white:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-color);
+            color: var(--white);
+            padding: 80px 20px 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-brand img {
+            height: 70px;
+            margin-bottom: 20px;
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        .footer-section h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: var(--accent-color);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-contact i {
+            color: var(--primary-color);
+            margin-top: 5px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scroll Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="images/logo.jpg" alt="Meldee Civil Works Logo">
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="engineering.html">Engineering</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+                <li><a href="teams.html">Teams</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-content">
+            <h1>Our Services</h1>
+            <p>Comprehensive civil engineering solutions tailored to your needs</p>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Services</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>What We Offer</h2>
+                <p>From concept to completion, we deliver excellence in every project</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-image">
+                        <img src="images/20190411_180022.jpg" alt="Building Construction">
+                        <div class="service-overlay"></div>
+                    </div>
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Building Construction</h3>
+                        <p>From residential homes to commercial complexes, we deliver quality construction with precision engineering and attention to detail.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Residential buildings</li>
+                            <li><i class="fas fa-check"></i> Commercial complexes</li>
+                            <li><i class="fas fa-check"></i> Industrial facilities</li>
+                            <li><i class="fas fa-check"></i> Renovations & extensions</li>
+                        </ul>
+                        <a href="contact.html" class="service-btn">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-image">
+                        <img src="images/20201009_081211.jpg" alt="Road Construction">
+                        <div class="service-overlay"></div>
+                    </div>
+                    <div class="service-icon">
+                        <i class="fas fa-road"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Road Construction</h3>
+                        <p>Complete road infrastructure solutions including highways, streets, and pavement works with durable materials and expert craftsmanship.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Highway construction</li>
+                            <li><i class="fas fa-check"></i> Street paving</li>
+                            <li><i class="fas fa-check"></i> Road rehabilitation</li>
+                            <li><i class="fas fa-check"></i> Kerb and channel</li>
+                        </ul>
+                        <a href="contact.html" class="service-btn">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-image">
+                        <img src="images/20190408_154352.jpg" alt="Drainage Systems">
+                        <div class="service-overlay"></div>
+                    </div>
+                    <div class="service-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Drainage Systems</h3>
+                        <p>Expert design and installation of stormwater management, sewer systems, and water infrastructure for residential and commercial projects.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Stormwater management</li>
+                            <li><i class="fas fa-check"></i> Sewer systems</li>
+                            <li><i class="fas fa-check"></i> Water reticulation</li>
+                            <li><i class="fas fa-check"></i> Drainage maintenance</li>
+                        </ul>
+                        <a href="contact.html" class="service-btn">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-image">
+                        <img src="images/20190506_120050.jpg" alt="Structural Design">
+                        <div class="service-overlay"></div>
+                    </div>
+                    <div class="service-icon">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Structural Design</h3>
+                        <p>Innovative structural engineering solutions ensuring safety, stability, and cost-effectiveness for all types of construction projects.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Structural analysis</li>
+                            <li><i class="fas fa-check"></i> Foundation design</li>
+                            <li><i class="fas fa-check"></i> Steel structures</li>
+                            <li><i class="fas fa-check"></i> Concrete design</li>
+                        </ul>
+                        <a href="contact.html" class="service-btn">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-image">
+                        <img src="images/20200722_125726.jpg" alt="Project Management">
+                        <div class="service-overlay"></div>
+                    </div>
+                    <div class="service-icon">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Project Management</h3>
+                        <p>End-to-end project oversight ensuring timely delivery, budget control, and quality assurance for construction projects of all sizes.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Project planning</li>
+                            <li><i class="fas fa-check"></i> Budget management</li>
+                            <li><i class="fas fa-check"></i> Quality control</li>
+                            <li><i class="fas fa-check"></i> Risk management</li>
+                        </ul>
+                        <a href="contact.html" class="service-btn">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-image">
+                        <img src="images/20200918_130105.jpg" alt="Renovations">
+                        <div class="service-overlay"></div>
+                    </div>
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Renovations</h3>
+                        <p>Transform existing structures with our expert renovation and refurbishment services, breathing new life into old buildings.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Building upgrades</li>
+                            <li><i class="fas fa-check"></i> Interior renovations</li>
+                            <li><i class="fas fa-check"></i> Exterior facelifts</li>
+                            <li><i class="fas fa-check"></i> Modernization</li>
+                        </ul>
+                        <a href="contact.html" class="service-btn">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section process-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Our Process</h2>
+                <p>A proven approach to delivering successful projects</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step fade-in">
+                    <div class="step-number">1</div>
+                    <h3>Consultation</h3>
+                    <p>We start by understanding your needs, goals, and budget to develop a tailored solution.</p>
+                </div>
+                <div class="process-step fade-in">
+                    <div class="step-number">2</div>
+                    <h3>Planning</h3>
+                    <p>Our team creates detailed plans, timelines, and cost estimates for your approval.</p>
+                </div>
+                <div class="process-step fade-in">
+                    <div class="step-number">3</div>
+                    <h3>Execution</h3>
+                    <p>We implement the project with precision, keeping you informed at every stage.</p>
+                </div>
+                <div class="process-step fade-in">
+                    <div class="step-number">4</div>
+                    <h3>Delivery</h3>
+                    <p>Final inspection and handover of a completed project that exceeds expectations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Section -->
+    <section class="section industries-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Industries We Serve</h2>
+                <p>Delivering excellence across diverse sectors</p>
+            </div>
+            <div class="industries-grid">
+                <div class="industry-item fade-in">
+                    <i class="fas fa-industry"></i>
+                    <h4>Industrial</h4>
+                </div>
+                <div class="industry-item fade-in">
+                    <i class="fas fa-home"></i>
+                    <h4>Residential</h4>
+                </div>
+                <div class="industry-item fade-in">
+                    <i class="fas fa-store"></i>
+                    <h4>Commercial</h4>
+                </div>
+                <div class="industry-item fade-in">
+                    <i class="fas fa-hospital"></i>
+                    <h4>Healthcare</h4>
+                </div>
+                <div class="industry-item fade-in">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h4>Educational</h4>
+                </div>
+                <div class="industry-item fade-in">
+                    <i class="fas fa-landmark"></i>
+                    <h4>Government</h4>
+                </div>
+                <div class="industry-item fade-in">
+                    <i class="fas fa-hotel"></i>
+                    <h4>Hospitality</h4>
+                </div>
+                <div class="industry-item fade-in">
+                    <i class="fas fa-warehouse"></i>
+                    <h4>Logistics</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section why-us">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Why Choose Meldee Civil Works</h2>
+                <p>The advantages of partnering with us</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-item fade-in">
+                    <div class="why-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="why-content">
+                        <h4>Quality Assurance</h4>
+                        <p>We maintain the highest standards of quality in every aspect of our work, ensuring durable and reliable results.</p>
+                    </div>
+                </div>
+                <div class="why-item fade-in">
+                    <div class="why-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="why-content">
+                        <h4>On-Time Delivery</h4>
+                        <p>We understand the importance of deadlines and work diligently to complete projects on schedule.</p>
+                    </div>
+                </div>
+                <div class="why-item fade-in">
+                    <div class="why-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="why-content">
+                        <h4>Safety First</h4>
+                        <p>Safety is our top priority. We implement strict safety protocols to protect our workers and clients.</p>
+                    </div>
+                </div>
+                <div class="why-item fade-in">
+                    <div class="why-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <div class="why-content">
+                        <h4>Competitive Pricing</h4>
+                        <p>We offer fair and transparent pricing without compromising on quality or service.</p>
+                    </div>
+                </div>
+                <div class="why-item fade-in">
+                    <div class="why-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="why-content">
+                        <h4>Expert Team</h4>
+                        <p>Our skilled professionals bring years of experience and expertise to every project.</p>
+                    </div>
+                </div>
+                <div class="why-item fade-in">
+                    <div class="why-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div class="why-content">
+                        <h4>Customer Support</h4>
+                        <p>We provide ongoing support and communication throughout the project lifecycle.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="fade-in">Ready to Start Your Project?</h2>
+            <p class="fade-in">Contact us today for a free consultation and quote. Let's build something great together.</p>
+            <a href="contact.html" class="btn-white fade-in">
+                <i class="fas fa-phone-alt"></i> Get a Quote
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="images/logo.jpg" alt="Meldee Civil Works Logo">
+                    <p>Meldee Civil Works (Pty) Ltd is a leading civil engineering company in South Africa, delivering exceptional infrastructure solutions with integrity and innovation.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> Projects</a></li>
+                        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Building Construction</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Road Construction</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Drainage Systems</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Structural Design</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Project Management</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 6 Palm Avenue, Kempton Park, Gauteng, South Africa</p>
+                    <p><i class="fas fa-phone-alt"></i> 061 582 1041</p>
+                    <p><i class="fas fa-mobile-alt"></i> 079 607 5675</p>
+                    <p><i class="fas fa-envelope"></i> thetemeldee@gmail.com</p>
+                    <p><i class="fas fa-clock"></i> Mon - Fri: 8:00 AM - 5:00 PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Meldee Civil Works (Pty) Ltd. All Rights Reserved. | Reg: 2020/090564/07</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Scroll Animation
+        const fadeElements = document.querySelectorAll('.fade-in');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fadeElements.forEach(el => observer.observe(el));
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.padding = '10px 0';
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.15)';
+            } else {
+                navbar.style.padding = '15px 0';
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            }
+        });
+    </script>
+</body>
+</html>
