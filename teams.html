@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team | Meldee Civil Works</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #D32F2F;
+            --secondary-color: #FF5722;
+            --accent-color: #FFC107;
+            --dark-color: #1A1A2E;
+            --light-color: #F5F5F5;
+            --white: #FFFFFF;
+            --gray: #6B7280;
+            --light-gray: #E5E7EB;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--dark-color);
+            cursor: pointer;
+        }
+
+        /* Page Header */
+        .page-header {
+            min-height: 50vh;
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.9) 0%, rgba(211, 47, 47, 0.8) 100%),
+                        url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1920&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 20px 60px;
+            position: relative;
+        }
+
+        .page-header-content h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .page-header-content p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .breadcrumb a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 100px 20px;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 30px auto 0;
+        }
+
+        /* Leadership Section */
+        .leadership {
+            background: var(--white);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .team-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            transform-style: preserve-3d;
+        }
+
+        .team-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+
+        .team-card:hover {
+            transform: translateY(-15px) rotateX(5deg) rotateY(5deg);
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.2);
+        }
+
+        .team-icon {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            font-size: 50px;
+            color: var(--white);
+            box-shadow: 0 15px 40px rgba(211, 47, 47, 0.3);
+            transition: transform 0.5s ease;
+        }
+
+        .team-card:hover .team-icon {
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        .team-card h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 10px;
+        }
+
+        .team-role {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 8px 25px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .team-description {
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .team-offerings {
+            text-align: left;
+            background: var(--light-color);
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        .team-offerings h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .team-offerings h4 i {
+            color: var(--primary-color);
+        }
+
+        .team-offerings ul {
+            list-style: none;
+        }
+
+        .team-offerings li {
+            padding: 8px 0;
+            color: var(--gray);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.95rem;
+        }
+
+        .team-offerings li i {
+            color: var(--primary-color);
+            margin-top: 5px;
+            font-size: 12px;
+        }
+
+        /* Departments Section */
+        .departments {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .dept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .dept-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dept-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            transition: height 0.4s ease;
+            z-index: 0;
+        }
+
+        .dept-card:hover::after {
+            height: 100%;
+        }
+
+        .dept-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .dept-card > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .dept-card:hover .dept-icon,
+        .dept-card:hover h3,
+        .dept-card:hover p,
+        .dept-card:hover li {
+            color: var(--white);
+        }
+
+        .dept-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            color: var(--white);
+            margin-bottom: 25px;
+            transition: all 0.4s ease;
+        }
+
+        .dept-card:hover .dept-icon {
+            background: var(--white);
+            color: var(--primary-color);
+        }
+
+        .dept-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+            transition: color 0.4s ease;
+        }
+
+        .dept-card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+            line-height: 1.7;
+            transition: color 0.4s ease;
+        }
+
+        .dept-card ul {
+            list-style: none;
+        }
+
+        .dept-card li {
+            padding: 8px 0;
+            color: var(--gray);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            transition: color 0.4s ease;
+        }
+
+        .dept-card li i {
+            font-size: 12px;
+        }
+
+        /* Expertise Section */
+        .expertise {
+            background: var(--dark-color);
+            color: var(--white);
+        }
+
+        .expertise .section-header h2 {
+            color: var(--white);
+        }
+
+        .expertise .section-header p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .expertise-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .expertise-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--primary-color);
+            transform: translateY(-10px) scale(1.03);
+        }
+
+        .expertise-item i {
+            font-size: 45px;
+            color: var(--accent-color);
+            margin-bottom: 25px;
+        }
+
+        .expertise-item h4 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .expertise-item p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.7;
+        }
+
+        /* Join Team Section */
+        .join-team {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            padding: 80px 20px;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .join-team h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .join-team p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-white {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 18px 40px;
+            background: var(--white);
+            color: var(--primary-color);
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-white:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-color);
+            color: var(--white);
+            padding: 80px 20px 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-brand img {
+            height: 70px;
+            margin-bottom: 20px;
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        .footer-section h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: var(--accent-color);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-contact i {
+            color: var(--primary-color);
+            margin-top: 5px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scroll Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="images/logo.jpg" alt="Meldee Civil Works Logo">
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="engineering.html">Engineering</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+                <li><a href="teams.html" class="active">Teams</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-content">
+            <h1>Our Leadership Team</h1>
+            <p>Experienced professionals dedicated to delivering excellence</p>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Our Team</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section class="section leadership">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Meet Our Directors</h2>
+                <p>The visionaries behind Meldee Civil Works</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card fade-in">
+                    <div class="team-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Meldon Thete</h3>
+                    <span class="team-role">Director & Founder</span>
+                    <p class="team-description">Meldon Thete is a visionary leader with extensive experience in civil engineering and construction management. As the founder of Meldee Civil Works, he has steered the company from its inception to become a respected name in South Africa's construction industry.</p>
+                    <div class="team-offerings">
+                        <h4><i class="fas fa-tasks"></i> Key Responsibilities</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Strategic business planning and development</li>
+                            <li><i class="fas fa-check"></i> Client relationship management</li>
+                            <li><i class="fas fa-check"></i> Project oversight and quality assurance</li>
+                            <li><i class="fas fa-check"></i> Financial planning and resource allocation</li>
+                            <li><i class="fas fa-check"></i> Stakeholder engagement and partnerships</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="team-card fade-in">
+                    <div class="team-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Mikateko Mathebula</h3>
+                    <span class="team-role">Director & Operations</span>
+                    <p class="team-description">Mikateko Mathebula brings exceptional operational expertise and technical knowledge to Meldee Civil Works. Her leadership ensures that every project is executed with precision, efficiency, and the highest standards of quality.</p>
+                    <div class="team-offerings">
+                        <h4><i class="fas fa-tasks"></i> Key Responsibilities</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Day-to-day operations management</li>
+                            <li><i class="fas fa-check"></i> Project planning and execution</li>
+                            <li><i class="fas fa-check"></i> Team leadership and development</li>
+                            <li><i class="fas fa-check"></i> Health and safety compliance</li>
+                            <li><i class="fas fa-check"></i> Vendor and supplier management</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Departments Section -->
+    <section class="section departments">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Our Departments</h2>
+                <p>Specialized teams working together for excellence</p>
+            </div>
+            <div class="dept-grid">
+                <div class="dept-card fade-in">
+                    <div class="dept-icon">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <h3>Engineering Department</h3>
+                    <p>Responsible for design, planning, and technical oversight of all projects.</p>
+                    <ul>
+                        <li><i class="fas fa-angle-right"></i> Structural design and analysis</li>
+                        <li><i class="fas fa-angle-right"></i> Site surveys and assessments</li>
+                        <li><i class="fas fa-angle-right"></i> Technical documentation</li>
+                        <li><i class="fas fa-angle-right"></i> Quality control testing</li>
+                    </ul>
+                </div>
+                <div class="dept-card fade-in">
+                    <div class="dept-icon">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <h3>Construction Team</h3>
+                    <p>Skilled professionals who bring designs to life with precision and care.</p>
+                    <ul>
+                        <li><i class="fas fa-angle-right"></i> Site preparation and excavation</li>
+                        <li><i class="fas fa-angle-right"></i> Concrete and masonry work</li>
+                        <li><i class="fas fa-angle-right"></i> Steel and framework installation</li>
+                        <li><i class="fas fa-angle-right"></i> Finishing and landscaping</li>
+                    </ul>
+                </div>
+                <div class="dept-card fade-in">
+                    <div class="dept-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <h3>Project Management</h3>
+                    <p>Ensuring projects are delivered on time, within budget, and to specification.</p>
+                    <ul>
+                        <li><i class="fas fa-angle-right"></i> Project planning and scheduling</li>
+                        <li><i class="fas fa-angle-right"></i> Budget management</li>
+                        <li><i class="fas fa-angle-right"></i> Progress monitoring</li>
+                        <li><i class="fas fa-angle-right"></i> Client communication</li>
+                    </ul>
+                </div>
+                <div class="dept-card fade-in">
+                    <div class="dept-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Health & Safety</h3>
+                    <p>Committed to maintaining the highest safety standards on all job sites.</p>
+                    <ul>
+                        <li><i class="fas fa-angle-right"></i> Safety protocol development</li>
+                        <li><i class="fas fa-angle-right"></i> Site safety inspections</li>
+                        <li><i class="fas fa-angle-right"></i> Staff training programs</li>
+                        <li><i class="fas fa-angle-right"></i> Incident prevention</li>
+                    </ul>
+                </div>
+                <div class="dept-card fade-in">
+                    <div class="dept-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Environmental Compliance</h3>
+                    <p>Ensuring all projects meet environmental standards and regulations.</p>
+                    <ul>
+                        <li><i class="fas fa-angle-right"></i> Environmental impact assessments</li>
+                        <li><i class="fas fa-angle-right"></i> Waste management planning</li>
+                        <li><i class="fas fa-angle-right"></i> Sustainability consulting</li>
+                        <li><i class="fas fa-angle-right"></i> Regulatory compliance</li>
+                    </ul>
+                </div>
+                <div class="dept-card fade-in">
+                    <div class="dept-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Equipment & Logistics</h3>
+                    <p>Managing equipment, materials, and logistics for efficient operations.</p>
+                    <ul>
+                        <li><i class="fas fa-angle-right"></i> Equipment procurement</li>
+                        <li><i class="fas fa-angle-right"></i> Maintenance scheduling</li>
+                        <li><i class="fas fa-angle-right"></i> Material sourcing</li>
+                        <li><i class="fas fa-angle-right"></i> Transport coordination</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section class="section expertise">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Our Collective Expertise</h2>
+                <p>Skills and capabilities that drive our success</p>
+            </div>
+            <div class="expertise-grid">
+                <div class="expertise-item fade-in">
+                    <i class="fas fa-building"></i>
+                    <h4>Building Construction</h4>
+                    <p>Residential, commercial, and industrial building projects of all scales</p>
+                </div>
+                <div class="expertise-item fade-in">
+                    <i class="fas fa-road"></i>
+                    <h4>Infrastructure Development</h4>
+                    <p>Roads, bridges, and public infrastructure projects</p>
+                </div>
+                <div class="expertise-item fade-in">
+                    <i class="fas fa-water"></i>
+                    <h4>Water Systems</h4>
+                    <p>Drainage, sewerage, and water supply infrastructure</p>
+                </div>
+                <div class="expertise-item fade-in">
+                    <i class="fas fa-drafting-compass"></i>
+                    <h4>Structural Engineering</h4>
+                    <p>Design and analysis of structural systems</p>
+                </div>
+                <div class="expertise-item fade-in">
+                    <i class="fas fa-project-diagram"></i>
+                    <h4>Project Management</h4>
+                    <p>End-to-end project planning and execution</p>
+                </div>
+                <div class="expertise-item fade-in">
+                    <i class="fas fa-chart-line"></i>
+                    <h4>Cost Engineering</h4>
+                    <p>Budget planning and cost control</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Team Section -->
+    <section class="join-team">
+        <div class="container">
+            <h2 class="fade-in">Join Our Team</h2>
+            <p class="fade-in">We're always looking for talented professionals to join our growing team. If you're passionate about civil engineering and want to make a difference, we'd love to hear from you.</p>
+            <a href="contact.html" class="btn-white fade-in">
+                <i class="fas fa-paper-plane"></i> Send Your CV
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="images/logo.jpg" alt="Meldee Civil Works Logo">
+                    <p>Meldee Civil Works (Pty) Ltd is a leading civil engineering company in South Africa, delivering exceptional infrastructure solutions with integrity and innovation.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> Projects</a></li>
+                        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Building Construction</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Road Construction</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Drainage Systems</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Structural Design</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Project Management</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 6 Palm Avenue, Kempton Park, Gauteng, South Africa</p>
+                    <p><i class="fas fa-phone-alt"></i> 061 582 1041</p>
+                    <p><i class="fas fa-mobile-alt"></i> 079 607 5675</p>
+                    <p><i class="fas fa-envelope"></i> thetemeldee@gmail.com</p>
+                    <p><i class="fas fa-clock"></i> Mon - Fri: 8:00 AM - 5:00 PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Meldee Civil Works (Pty) Ltd. All Rights Reserved. | Reg: 2020/090564/07</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Scroll Animation
+        const fadeElements = document.querySelectorAll('.fade-in');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fadeElements.forEach(el => observer.observe(el));
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.padding = '10px 0';
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.15)';
+            } else {
+                navbar.style.padding = '15px 0';
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            }
+        });
+    </script>
+</body>
+</html>
